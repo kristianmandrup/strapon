@@ -1,0 +1,19 @@
+= simple_form_for @<%= class_name.underscore %> :validate => true do |f|
+  %h2
+    Starter Form overwrite as neccessary
+  - if flash[:notice].present?
+    %p{:class => "error"}
+      = flash[:notice]
+  .email-code-input
+    = f.input :email,
+              :label => "Email",
+              :required => true,
+              :placeholder => 'Email'
+
+  .email-code-input.confirm
+    = f.input :email_confirmation, :label => "Email confirmation",
+              :required => true,
+              :placeholder => 'Bekræft email'
+  #form-button
+    = f.submit "Submit"
+

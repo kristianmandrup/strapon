@@ -1,0 +1,87 @@
+@charset "UTF-8"
+
+// THE FIRST IMPORTS ADD NO CSS UPON COMPILE
+
+// ✔ IMPORT COMMON FUNCTIONS AND VARIABLES
+// enable / disable, but do not edit these files
+@import ricco/functions/all
+@import ricco/variables/all
+
+// ✔ ADD YOUR OWN VARIABLES
+// base, color, fonts, grids
+// edit these as you see fit
+@import site/00_variables/all
+
+// ✔ IMPORT COMPASS AND OTHER GEMS
+// enable / disable, but do not edit these files
+@import compass
+
+@import ricco/mixins/all
+//@import bootstrap/mixins
+
+// ✔ ADD YOUR OWN MIXINS
+// @import site/00_mixins/all
+
+// THE FOLLOWING IMPORTS WILL ADD CSS UPON COMPILE
+
+// ✔ ADD A CSS RESET OR NORMALIZATION
+@import site/01_reset/reset
+
+// ✔ IMPORT COMMON HELPER EXTENDABLES
+// @import ricco/extend/all
+@import ricco/extend/helpers
+// @import ricco/extend/sticky-footer
+
+// ✔ CHOOSE A GRID SYSTEM
+// @import site/02_grid/grids-blueprint.sass
+@import site/02_grid/grid_system
+
+// ✔ ADD YOUR OWN EXTENDABLES
+@import site/03_typography/typography
+
+// VISIT EACH FOLDER TO CHOOSE SPECIFIC PARTIALS
+@import site/04_elements/all
+
+@import site/05_forms/all
+
+@import site/06_patterns/all
+
+@import site/07_navigation/navigation
+
+@import site/08_sprites/sprites
+
+@import site/09_plugins/plugins
+
+// --------------------------------------------------------------------------------------
+// ✔ YOUR CUSTOM LAYOUT AND DESIGN SASS
+// THIS IS WHERE MOST CUSTOM WORK GOES
+// -- PRIMARY DESIGN --
+@import site/10_layout_design/all
+// ------ OR ------
+// -- STYLE TILE DESIGN --
+// enable these partials for styletile layout and design
+// work with styletile.html
+// see: http://badassideas.com/style-tiles-as-a-web-design-process-tool/
+// (requires susy)
+//@import site/11_styletile/tile_layout
+//@import site/11_styletile/tile_responsive
+//@import site/11_styletile/tile_design
+// --------------------------------------------------------------------------------------
+
+// ✔ CHOOSE A RESPONSIVE STARTER
+@import site/12_responsive/bootstrap
+
+// ✔ ADJUST FOR LESSER/GREATER SYSTEMS
+// IE STYLES - aren't needed by other browsers, so compile them as a separate file and load via conditionals
+// SELECTIVIZR is nice, but the fallback css should really be compiled to a separate file
+
+//@import "site/13_browser_adjustments/ie"
+//@import "site/13_browser_adjustments/modernizr"
+//@import "site/13_browser_adjustments/selectivizr"
+
+// ✔ ENABLE PRINT STYLES
+@import site/14_print/print
+
+// Utility classes
+// Has to be last to override when necessary
+@import bootstrap/utilities

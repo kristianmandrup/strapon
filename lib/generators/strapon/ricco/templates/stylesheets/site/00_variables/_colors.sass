@@ -1,0 +1,225 @@
+// DEFAULT COLORS
+$c-primary:   $badass
+$c-secondary: $black
+$c-tertiary:  $black
+$c-quadrary:  $black
+
+// COLOR SCHEMES
+// use color-schemer if it's loaded
+@if $color-schemer-loaded
+  // Color schemes to choose from
+      mono, complement, triad, tetrad, analogic, accented-analogic
+  // Pick the base color for your scheme:
+  $base-color: $c-primary
+  // Select your scheme from the list and place it here:
+  $color-scheme: accented-analogic
+  // How distant do you want the hue offset to be:
+  $hue-offset: 30
+  // How distant do you want tints and shades to be from their base:
+  $brightness-offset: 10%
+  // Use Claude Boutet complements instead of RGB complements.
+  // $color-theory: boutet
+  // Set saturation to 100% and lightness to 50% on all colors
+  // $equalize: true
+  $c-primary:   color-schemer(primary)
+  $c-secondary: color-schemer(secondary)
+  $c-tertiary:  color-schemer(tertiary)
+  $c-quadrary:  color-schemer(quadrary)
+
+// COLOR VARIABLES FOR STYLE TILES
+// enable and customize as needed
+$color-tile1-1: $gray
+$color-tile1-2: $gray
+$color-tile1-3: $gray
+$color-tile1-4: $gray
+$color-tile1-5: $gray
+$color-tile1-6: $gray
+
+// Color variables expected by _defaults.sass ------------------
+$base-color: $c-primary
+$text-color: $black
+$alt-color: $badass
+$background-color: $white
+$border-color: $gray
+
+//@import "ricco/color"
+//@import "ric/helpers/02_mixins/modular_scale"
+
+// Variables to customize the look and feel
+
+// Colors
+// Base color gets referenced in frontend so until that is changed keep
+$baseColor:                         #363636 !default
+$brandColor:                        $darkorange !default
+$altColor:                          $black
+
+// Text colors
+$textColor:                         $baseColor
+$headingColor:                      $gray
+$altHeadingColor:                   $gray
+
+// Default text shadow
+$defaultTextShadowColor:            rgba($black, .6)
+$defaultTextShadowBlur:             3px
+$defaultTextShadowVertOffset:       1px
+
+// Links
+$linkColor:                         $gray !default
+$linkColorHover:                    darken($linkColor, 15%) !default
+
+$linkColorVisited:                  $linkColorHover
+$linkColorFocus:                    $linkColorHover
+$linkColorHover:                    $linkColorHover
+$linkColorActive:                   $linkColorHover
+
+// background and borders
+$bodyBackground:                    $white !default
+$backgroundColor:                   $white !default
+$borderColor:                       $gray !default
+
+// Tables
+// -------------------------
+// overall background-color
+$tableBackground:                   transparent !default
+// for striping
+$tableBackgroundAccent:             #f9f9f9 !default
+// for hover
+$tableBackgroundHover:              #f5f5f5 !default
+// table and cell border
+$tableBorder:                       #ddd !default
+
+// Forms
+// -------------------------
+$inputBackground:                   $white !default
+$inputBorder:                       #ccc !default
+$inputDisabledBackground:           $grayLighter !default
+
+// Dropdowns
+// -------------------------
+$dropdownBackground:                $white !default
+$dropdownBorder:                    rgba(0,0,0,.2) !default
+$dropdownLinkColor:                 $grayDark !default
+$dropdownLinkColorHover:            $white !default
+$dropdownLinkBackgroundHover:       $linkColor !default
+
+// Header and Footer colors
+$hfTextColor:                       $darkgray
+// Links
+$hfLinkColor:                       $hfTextColor
+$hfLinkColorVisited:                $hfTextColor
+$hfLinkColorFocus:                  $hfTextColor
+$hfLinkColorHover:                  $hfTextColor
+$hfLinkColorActive:                 $hfTextColor
+$hfBackgroundColor:                 $white !default
+
+
+// Forms
+$formInput:                         $black
+$formInputFocus:                    $brandColor
+$formInputTextShadow:               $black
+$formInputBorderColor:              $gray
+$formInputShadow:                   $lightgray
+$formInputBg:                       #FBFBFB
+$formInputBgTop:                    #FBFBFB
+$formInputBgBottom:                 #E9E9E9
+
+
+
+// Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons
+// Buttons
+$primaryButtonBackground:           $linkColor !default
+$buttonBorder:                      $gray
+$buttonRadius:                      5px
+
+// text
+$buttonColor:                       $white
+$buttonFocus:                       $white
+
+// backgrounds
+$buttonBg:                          $brandColor
+$buttonBgFocus:                     $green
+
+// main button
+$buttonMainFocus:                   $white
+$buttonMainBgFocus:                 $green
+
+//alternate button
+$buttonAltColor:                    $white
+$buttonAltBgColor:                  $red
+$buttonAltBorder:                   $red
+$buttonAltFocus:                    #E7FBBA
+$buttonAltBgFocus:                  #E7FBBA
+
+
+// Twitter Buttons
+// -------------------------
+$btnBackground:                     $white !default
+$btnBackgroundHighlight:            darken($white, 10%) !default
+$btnBorder:                         darken($white, 20%) !default
+
+$btnPrimaryBackground:              $linkColor !default
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 15%) !default
+
+$btnInfoBackground:                 #5bc0de !default
+$btnInfoBackgroundHighlight:        #2f96b4 !default
+
+$btnSuccessBackground:              #62c462 !default
+$btnSuccessBackgroundHighlight:     #51a351 !default
+
+$btnWarningBackground:              lighten($orange, 15%) !default
+$btnWarningBackgroundHighlight:     $orange !default
+
+$btnDangerBackground:               #ee5f5b !default
+$btnDangerBackgroundHighlight:      #bd362f !default
+
+$btnInverseBackground:              $gray !default
+$btnInverseBackgroundHighlight:     $grayDarker !default
+
+
+// Input placeholder text color
+$placeholderText:                   $grayLight !default
+
+// HR border color
+$hrBorder:                          $grayLighter !default
+
+// Navbar
+// -------------------------
+$navbarBackground:                $grayDarker !default
+$navbarBackgroundHighlight:       $grayDark !default
+
+$navbarText:                      $grayLight !default
+$navbarLinkColor:                 $grayLight !default
+$navbarLinkColorHover:            $white !default
+$navbarLinkColorActive:           $navbarLinkColorHover !default
+$navbarLinkBackgroundHover:       transparent !default
+$navbarLinkBackgroundActive:      $navbarBackground !default
+
+$navbarSearchBackground:          lighten($navbarBackground, 25%) !default
+$navbarSearchBackgroundFocus:     $white !default
+$navbarSearchBorder:              darken($navbarSearchBackground, 30%) !default
+$navbarSearchPlaceholderColor:    #ccc !default
+
+
+// Hero unit
+// -------------------------
+$heroUnitBackground:              $grayLighter !default
+$heroUnitHeadingColor:            inherit !default
+$heroUnitLeadColor:               inherit !default
+
+
+// Form states and alerts
+$warningText:                     #c09853 !default
+$warningBackground:               #fcf8e3 !default
+$warningBorder:                   darken(adjust-hue($warningBackground, -10), 3%) !default
+
+$errorText:                       #b94a48 !default
+$errorBackground:                 #f2dede !default
+$errorBorder:                     darken(adjust-hue($errorBackground, -10), 3%) !default
+
+$successText:                     #468847 !default
+$successBackground:               #dff0d8 !default
+$successBorder:                   darken(adjust-hue($successBackground, -10), 5%) !default
+
+$infoText:                        #3a87ad !default
+$infoBackground:                  #d9edf7 !default
+$infoBorder:                      darken(adjust-hue($infoBackground, -10), 7%) !default

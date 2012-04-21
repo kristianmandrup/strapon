@@ -1,0 +1,31 @@
+@import "bootstrap/navs"
+@import "bootstrap/navbar"
+@import "bootstrap/breadcrumbs"
+@import "bootstrap/pagination"
+@import "bootstrap/pager"
+
+
+.navbar-inner
+  +border-radius(0px)
+
+// header nav bar
+.navbar
+  a.brand
+    +remove-link-underlines
+  .nav
+    margin: 60px 10px 0 0
+    li
+      color: $hfLinkColor
+      line-height: 30px
+      a
+        +link-colors($hfLinkColor, $hfLinkColorHover, $hfLinkColorActive, $hfLinkColorVisited, $hfLinkColorFocus)
+        +better-links($hfBackgroundColor, $hfLinkColorHover, $hfBackgroundColor, $hfBackgroundColor, $hfBackgroundColor)
+        +remove-link-underlines
+    li.active
+      a
+        color: $hfLinkColorActive
+        border-bottom: 3px solid $brandColor
+
+
+.navbar .nav .active > a, .navbar .nav .active > a:hover
+  background-color: transparent

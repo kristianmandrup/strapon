@@ -1,0 +1,11 @@
+- site = ["en", "da"]
+- language = /.*\/en.*/ === request.url ? "en" : "da"
+%ul.nav
+  - @cms_site.pages.root.children.published.order.each do |page|
+    - if site.include?(page.label)
+      - page.children.published.each do |firstchild|
+        - if firstchild.parent.label == language
+          -if /.*\/#{firstchild.slug}.*/ === request.url
+            %li.active=link_to firstchild.label, firstchild.full_path
+          -else
+            %li=link_to firstchild.label, firstchild.full_path

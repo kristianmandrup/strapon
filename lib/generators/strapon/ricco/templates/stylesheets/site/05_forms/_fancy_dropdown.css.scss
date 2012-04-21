@@ -1,0 +1,230 @@
+
+::-moz-selection {
+  background:#81ba10;
+  color:#fff;
+  text-shadow:none
+}
+
+.p-dropdown{
+  font-size: 12px;
+  ul, ol, li {
+    margin:0;
+    padding:0;
+  }
+}
+
+
+.p-dropdown-button, .p-dropdown-label, .p-dropdown-up, .p-dropdown-down, .p-dropdown-up span, .p-dropdown-down span, .p-dropdown-up a, .p-dropdown-down a, .p-dropdown-wrapper li, .p-dropdown-wrapper li div, .white-button, .white-button span, .white-button-big, .white-button-big span, .green-button, .green-button span, .green-button-big, .green-button-big span, .btn-cancel, .btn-cancel span, .overlay-tab, .overlay-tab-inner, .form-input, .form-input input, .form-input-required, .form-input-required input, .form-input-big, .form-input-big input, .form-input-required-big, .form-input-required-big input, .form-big-search-input, .form-big-search-input input {
+   background: image_url("ricco/sprites/sprite-gui-width.png") no-repeat scroll left 0 transparent;
+   display: block;
+}
+
+
+
+.p-dropdown {
+width:250px;
+position:relative;
+outline:0
+}
+.p-dropdown-list {
+display:none;
+position:absolute;
+top:36px;
+width:100%;
+z-index:999;
+}
+.p-dropdown-button, .p-dropdown-label {
+font-size:13px;
+line-height:28px;
+font-weight:bold;
+color:#333;
+cursor:pointer;
+outline:0;
+height:36px
+}
+.p-dropdown-button {
+background-position:left top;
+padding-left:12px
+}
+.p-dropdown-label {
+background-position:right -147px
+}
+.p-dropdown-error .p-dropdown-button {
+background-position:left -4139px;
+padding-left:12px
+}
+.p-dropdown-error .p-dropdown-label {
+background-position:right -4096px
+}
+.p-dropdown-button:hover {
+background-position:left -50px
+}
+.p-dropdown-button:hover .p-dropdown-label {
+background-position:right -197px;
+color:#84c312
+}
+.p-dropdown-button-disabled .p-dropdown-label {
+background-position:right -4345px;
+color:#ccc!important
+}
+.p-dropdown-button-disabled:hover .p-dropdown-label {
+background-position:right -4345px;
+color:#ccc!important
+}
+.p-dropdown-error .p-dropdown-button-disabled {
+background-position:left -4139px
+}
+.p-dropdown-error .p-dropdown-button-disabled .p-dropdown-label {
+background-position:right -4396px
+}
+.p-dropdown-error .p-dropdown-button-disabled:hover .p-dropdown-label {
+background-position:right -4396px
+}
+.open .p-dropdown-button, .open .p-dropdown-button:hover {
+background-position:left -100px
+}
+.open .p-dropdown-label, .open .p-dropdown-label:hover {
+background-position:right -247px;
+color:#84c312
+}
+.p-dropdown-label span {
+display:block;
+padding-top:2px;
+padding-right:46px
+}
+.p-dropdown-up, .p-dropdown-up span {
+height:31px
+}
+.p-dropdown-down, .p-dropdown-down span {
+height:31px
+}
+.p-dropdown-up, .p-dropdown-down {
+position:relative;
+padding-left:19px;
+cursor:pointer
+}
+.p-dropdown-up {
+background-position:left -318px
+}
+.p-dropdown-down {
+background-position:left -356px
+}
+.p-dropdown-up span {
+background-position:right -398px
+}
+.p-dropdown-down span {
+background-position:right -436px
+}
+.p-dropdown-up-hover {
+background-position:left -638px
+}
+.p-dropdown-down-hover {
+background-position:left -675px
+}
+.p-dropdown-up-hover span {
+background-position:right -716px
+}
+.p-dropdown-down-hover span {
+background-position:right -753px
+}
+.p-dropdown-up-disabled {
+background-position:left -478px
+}
+.p-dropdown-down-disabled {
+background-position:left -517px
+}
+.p-dropdown-up-disabled span {
+background-position:right -555px
+}
+.p-dropdown-down-disabled span {
+background-position:right -594px
+}
+.p-dropdown-up a, .p-dropdown-down a {
+position:absolute;
+left:85px;
+top:14px;
+width:12px;
+height:6px;
+text-indent:-9999em;
+border-bottom: none;
+}
+.p-dropdown-up a {
+background-position:left -297px
+}
+.p-dropdown-down a {
+background-position:-17px -297px
+}
+.p-dropdown-up-hover a {
+background-position:-39px -297px
+}
+.p-dropdown-down-hover a {
+background-position:-56px -297px
+}
+.p-dropdown-up-disabled a {
+background-position:-78px -297px
+}
+.p-dropdown-down-disabled a {
+background-position:-92px -297px
+}
+.p-dropdown-wrapper ul {
+display:block
+}
+.p-dropdown-wrapper li, .p-dropdown-wrapper li div {
+display:block;
+cursor:pointer;
+height:30px
+}
+.p-dropdown-wrapper li {
+background-position:left -4797px;
+padding-left:5px
+}
+.p-dropdown-wrapper li div {
+background-position:right -4834px
+}
+.p-dropdown-wrapper li:hover, .p-dropdown-wrapper li.selected {
+background-position:left -4870px;
+padding-left:5px
+}
+.p-dropdown-wrapper li:hover div, .p-dropdown-wrapper li.selected div {
+background-position:right -4907px
+}
+.p-dropdown-wrapper li.p-dropdown-first, .p-dropdown-wrapper li.p-dropdown-first div {
+height:31px
+}
+.p-dropdown-wrapper li.p-dropdown-first {
+background-position:left -4648px
+}
+.p-dropdown-wrapper li.p-dropdown-first div {
+background-position:right -4685px
+}
+.p-dropdown-wrapper li.p-dropdown-first:hover, .p-dropdown-wrapper li.p-dropdown-first.selected {
+background-position:left -4722px
+}
+.p-dropdown-wrapper li.p-dropdown-first:hover div, .p-dropdown-wrapper li.p-dropdown-first.selected div {
+background-position:right -4760px
+}
+.p-dropdown-wrapper li.p-dropdown-last, .p-dropdown-wrapper li.p-dropdown-last div {
+height:34px
+}
+.p-dropdown-wrapper li.p-dropdown-last {
+background-position:left -4944px
+}
+.p-dropdown-wrapper li.p-dropdown-last div {
+background-position:right -4981px
+}
+.p-dropdown-wrapper li.p-dropdown-last:hover, .p-dropdown-wrapper li.p-dropdown-last.selected {
+background-position:left -5016px
+}
+.p-dropdown-wrapper li.p-dropdown-last:hover div, .p-dropdown-wrapper li.p-dropdown-last.selected div {
+background-position:right -5051px
+}
+.p-dropdown-wrapper li span {
+display:inline-block;
+padding-top:6px;
+padding-left:12px;
+padding-right:12px;
+color:#4a4a4a
+}
+.p-dropdown-wrapper li:hover span, .p-dropdown-wrapper li.selected span {
+color:black
+}

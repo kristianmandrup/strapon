@@ -1,0 +1,102 @@
+//this serves only as an example of how a layout may be created
+//TODO make this the starter for a RWD
+//TODO also need to find senisible defaults for html if using zurb-foundation mobile
+// but that has be placed in a HTML layout.
+
+.vcard
+  margin-bottom: 20px
+  h4
+    margin-bottom: 5px
+  p
+    margin: 3px
+
+#header-wrapper, .main-wrapper, #footer-wrapper, #call-to-action-wrapper
+  width: 100%
+
+
+#header, #main, #footer
+  overflow: hidden
+
+#header-wrapper
+  height: 120px
+  #header
+    margin: 40px 0 0 0
+    #main
+      margin: 30px 0 0 0
+
+.main-wrapper
+  #main
+    margin: 20px 0 0 0
+    #flash-messages  // this could be placed below the survey heading
+      width: 100%
+      margin: 20px 0 0 0
+    .survey     //made this a class as this will often accompany an id div
+      width: 66%
+      float: left
+
+    #sidebar
+      width: 32%
+      float: right
+
+#footer-wrapper
+  #footer
+    margin: 20px 0 0 0
+
+// HOME PAGE LAYOUT
+
+#call-to-action-button
+  margin: 11% 0 0 10%
+
+
+// SHOWCASE PAGE STYLES
+#showcase
+  #banner
+    padding: 20px 0 60px 0
+    #banner-desciption
+    #banner-image
+  #content
+    #details
+      h2
+        margin-top: 0
+      #slider-wrapper
+        #slider
+          figure
+            margin-left: 18%
+    #aside
+      #share
+        padding: 0 0 20px 0
+      ul.social
+        +horizontal-list-container
+        li
+          +horizontal-list-item(3px, left)
+      #info
+      #info
+        padding-top: 20px
+        padding-bottom: 20px
+      #download
+        padding: 20px 0 0 0
+  #left-arrow-box, #right-arrow-box
+    height: 100px
+
+  #mobile-icon, #info-icon
+    float: left
+    padding: 0 0 0 0
+
+  #slider-wrapper
+    .arrow-left, .arrow-right
+      img
+        height: 40px
+        margin-top: 40%
+
+  #case-carousel
+    .carousel-inner
+      .active
+        img
+          margin: 0 auto
+
+
+// REASONS PAGE STYLES
+#reasons
+  h2
+  .explanation
+    margin: 30px 0 20px 0

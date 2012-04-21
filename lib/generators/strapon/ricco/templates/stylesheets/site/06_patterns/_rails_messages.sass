@@ -1,0 +1,33 @@
+@import "bootstrap/alerts"
+
+// ALERT STYLES
+// ------------
+
+// Base alert styles
+.flash_alert, .flash_notice
+  padding: 8px 35px 8px 14px
+  margin-bottom: $baseLineHeight
+  text-shadow: 0 1px 0 rgba(255,255,255,.5)
+  border: 1px solid $warningBorder
+  +border-radius(4px)
+
+.flash_alert 
+  background-color: $warningBackground
+  border-color: $warningBorder
+
+.flash_alert, .alert-heading
+  color: $warningText
+
+// Adjust close link position
+.flash_alert .close
+  position: relative
+  top: -2px
+  right: -21px
+  line-height: 18px
+
+.flash_notice 
+  background-color: $successBackground
+  border-color: $successBorder
+
+
+

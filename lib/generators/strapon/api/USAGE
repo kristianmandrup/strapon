@@ -1,0 +1,12 @@
+NAME
+     strapon:api
+
+SYNOPSIS
+     create a starting template for creating api's
+
+DESCRIPTION
+    installs gems for apis
+    create starting specs
+
+EXAMPLE
+    will create restful api based on radar's / backbone js best practice from thoughtbot

@@ -1,0 +1,40 @@
+//@import "bootstrap/type"
+@import "bootstrap/code"
+
+// The following classes are for use with @extend.
+.serif
+  font-family: $fontSerifs
+
+.sans
+  font-family: $fontSans
+
+.mono
+  font-family: $fontMono
+
+.caps
+  font-size: 0.9em
+  letter-spacing: 0.1em
+
+.headers
+  font-family: $fontHeadline
+
+.allcaps
+  @extend .caps
+  text-transform: uppercase
+
+.amp
+  font-family: $fontAmp
+
+.smallcaps
+  @extend .caps
+  font-variant: small-caps
+
+.dquo
+  margin-left: -0.5em
+  font-family: $fontAmp
+
+/* Only use the fancy ampersand in <h#> tags
+h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp
+  font-size: 1em
+  font-family: $fontAmp
+  font-style: italic

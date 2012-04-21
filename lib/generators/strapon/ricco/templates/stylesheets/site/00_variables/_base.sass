@@ -1,0 +1,114 @@
+// SET VARIABLES FOR USE BY DEFAULTS, MIXINS, AND FRAMEWORKS
+// value used in compass typography
+// see: basic/default/typography
+// and: http://compass-style.org/reference/compass/typography/vertical_rhythm/
+$base-font-size: 16px
+
+// --- Modular SCALE (used by _defaults.sass) -----------
+// values used to determine modular scale values
+// see: src/common/mixins/_modular-scale.sass
+// and http://modularscale.com/
+$ratio: $golden $major-third
+$base-size: $base-font-size
+
+
+// Dimensions
+// basic values, independant of any css framework
+$kit-baseline: $base-font-size * 1.5
+$kit-baseline-half: $kit-baseline * 0.5
+$kit-baseline-neg: $kit-baseline * -1
+$kit-gutter: ms(2)
+$kit-gutter-half: $kit-gutter * 0.5
+$kit-gutter-neg: $kit-gutter * -1
+
+// use the Compass baseline system
+$establish-baseline: true
+
+// pixel-normalize
+// http://www.alistapart.com/articles/a-pixel-identity-crisis/
+$pixel-normalize: true
+
+// pick a reset of normalization
+// accepted values: 'meyer', 'normalize'
+// choose to reset header sizes (applies to 'normalize' only)
+// $init-headers: true
+$init-type: normalize
+
+
+// Typography
+$baseFontSize:                14px !default
+$baseLineHeight:              18px !default
+
+$baseRhythmUnit:              20px !default
+
+//$relative-font-sizing: 14px
+//$font-unit: 14px
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
+$gridColumns:                 12 !default
+$gridColumnWidth:             60px !default
+$gridGutterWidth:             20px !default
+$gridRowWidth:                ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1)) !default
+
+// Fluid grid
+$fluidGridColumnWidth:        6.382978723% !default
+$fluidGridGutterWidth:        2.127659574% !default
+
+// Borders
+$stdBorder:                   1px $gray solid
+
+
+// FONT FAMILIES ======================================================================
+// Establish default fonts for site
+// http://www.google.com/webfonts that have been loaded
+// Inconsolata, Tangerine, Droid Sans
+// https://typekit.com/ that have been loaded
+
+// set fonts for the site
+$fontSans:          Arial, "Helvetica Neue", "Helvetica", Verdana, sans-serif !default
+$fontSerifs:        Georgia, serif, Inconsolata !default
+$fontMono:          Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace
+$fontCursive:       cursive, 'Brush Script MT', 'Comic Sans MS'
+$fontFancy:         Tangerine
+
+$baseFontFamily:              $fontSerifs
+$fontBody:                    $fontSerifs
+$fontHeadline:                $fontSerifs
+$fontBrand:                   $fontSerifs
+$fontButtons:                 $fontSerifs
+
+// special use font stacks
+// ampersands
+$fontAmp:                     $fontSerifs
+// CAPS
+$fontCap:                     $fontSans
+
+
+// Forms
+$formFontSize:                14px
+
+
+// Z-index master list
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+$zindexDropdown:              1000
+$zindexPopover:               1010
+$zindexTooltip:               1020
+$zindexFixedNavbar:           1030
+$zindexModalBackdrop:         1040
+$zindexModal:                 1050
+
+
+// Navbar
+// -------------------------
+$navbarHeight:                40px !default
+
+// Sprite icons path
+// -------------------------
+$iconSpritePath:              asset-url("glyphicons-halflings.png", image) !default
+$iconWhiteSpritePath:         asset-url("glyphicons-halflings-white.png", image) !default
+
+$formSelectImage:             "ricco/formalize/select_arrow.gif"
