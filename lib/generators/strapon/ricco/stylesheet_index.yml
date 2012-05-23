@@ -1,0 +1,74 @@
+stylesheets:
+  variables:
+    index: 0
+      files:
+        - all 
+        - base
+        - colors
+        - fonts
+        - grid
+  reset: 01
+  grid:
+    index: 02
+    files:
+      - grid_system
+      - grids_blueprint
+  typography: 03
+  elements:
+    index: 04
+    files:
+      - all
+      - common
+      - edits
+      - headers
+      - images
+      - lists
+      - semantics
+      - tables
+  forms:
+    index: 05
+    files:
+      - all
+      - dropdowns
+      - fancy_dropdown
+      - form_defaults
+      - formalize
+      - form_layouts
+  patterns:
+    index: 06
+    files:
+      - all
+      - button_groups
+      - buttons
+      - close
+      - component_animations
+      - popovers
+      - rails_messages
+      - wells
+  navigation: 07
+  sprites: 08
+  plugins: 09
+  layout_design:
+    index: 10
+    files:
+      - all
+      - layout
+      - layout_design
+  styletile:
+    index: 11
+    files:
+      - tile_design
+      - tile_layout
+      - tile_responsive
+  responsive:
+    index: 12
+    files:
+      - bootstrap
+      - mixins
+      - blueprint
+  browser_adjustments:
+    index: 13
+    files:
+      - ie
+      - modernizr
+      - selectivizr

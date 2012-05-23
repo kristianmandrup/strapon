@@ -1,4 +1,6 @@
-source "http://rubygems.org"
+source :rubygems
+
+gem 'hashie', '~> 1.2.0'
 
 # Declare your gem's dependencies in strapon.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
