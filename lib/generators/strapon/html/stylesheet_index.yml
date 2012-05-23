@@ -1,0 +1,26 @@
+stylesheets:
+  base:
+    index: 00
+    files:
+      - grid_system
+      - variables
+  typography: 02
+  elements: 03
+  forms:
+    index: 04
+    files:
+      - form_defaults
+      - formalize
+  patterns:
+    index: 05
+      files:
+        - buttons
+        - navigation
+        - rails
+  sprites: 06
+  layout: 07
+  design: 08
+  responsive: 09
+  ie: 10
+  modernizr: 11
+  print: 12

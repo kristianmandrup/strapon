@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "campaign landing page" do
+describe "landing page" do
 
   #let(:profile) { FactoryGirl.create(:profile) }
 

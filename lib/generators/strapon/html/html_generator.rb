@@ -1,3 +1,5 @@
+require 'generators/strapon/html/file_repository'
+
 module Strapon
   module Generators
     class RiccoGenerator < Rails::Generators::NamedBase
@@ -19,23 +21,8 @@ module Strapon
         #css design structure
         remove_file "app/assets/stylesheets/application.css"
         copy_file "stylesheets/application.css.sass"                        , "app/assets/stylesheets/application.css.sass"
-        copy_file "stylesheets/site/00_base/_grid_system.css.sass"          , "app/assets/stylesheets/site/00_base/_grid_system.css.sass"
-        copy_file "stylesheets/site/00_base/_variables.css.sass"            , "app/assets/stylesheets/site/00_base/_variables.css.sass"
-        copy_file "stylesheets/site/02_typography/_typography.css.sass"     , "app/assets/stylesheets/site/02_typography/_typography.css.sass"
-        copy_file "stylesheets/site/03_elements/_elements.css.sass"         , "app/assets/stylesheets/site/03_elements/_elements.css.sass"
-        copy_file "stylesheets/site/04_forms/_form_defaults.css.sass"       , "app/assets/stylesheets/site/04_forms/_form_defaults.css.sass"
-        copy_file "stylesheets/site/04_forms/_formalize.css.sass"           , "app/assets/stylesheets/site/04_forms/_formalize.css.sass"
-        copy_file "stylesheets/site/05_patterns/_buttons.css.scss"          , "app/assets/stylesheets/site/05_patterns/_buttons.css.scss"
-        copy_file "stylesheets/site/05_patterns/_navigation.css.sass"       , "app/assets/stylesheets/site/05_patterns/_navigation.css.sass"
-        copy_file "stylesheets/site/05_patterns/_rails.css.sass"            , "app/assets/stylesheets/site/05_patterns/_rails.css.sass"
-        copy_file "stylesheets/site/06_sprites/_sprites.css.sass"           , "app/assets/stylesheets/site/06_sprites/_sprites.css.sass"
-        copy_file "stylesheets/site/07_layout/_layout.css.sass"             , "app/assets/stylesheets/site/07_layout/_layout.css.sass"
-        copy_file "stylesheets/site/08_design/_design.css.sass"             , "app/assets/stylesheets/site/08_design/_design.css.sass"
-        copy_file "stylesheets/site/09_responsive/_responsive.css.sass"     , "app/assets/stylesheets/site/09_responsive/_responsive.css.sass"
-        copy_file "stylesheets/site/10_ie/_ie.css.sass"                     , "app/assets/stylesheets/site/10_ie/_ie.css.sass"
-        copy_file "stylesheets/site/11_modernizr/_modernizr.css.sass"       , "app/assets/stylesheets/site/11_modernizr/_modernizr.css.sass"
-        copy_file "stylesheets/site/12_print/_print.css.sass"               , "app/assets/stylesheets/site/12_print/_print.css.sass"
 
+        copy_stylesheets
 
         # Gemfile
         inject_into_file "Gemfile", :after => /^.*gem 'jquery-rails.*\n/ do
@@ -64,6 +51,34 @@ module Strapon
         puts "remember to turn off html5 validations in simple_form config otherwise client side validations won't work"
         puts ""
         puts "#{'*'*70}"
+      end
+
+      protected
+
+      def copy_stylesheets
+        FileRepository.new.build.stylesheets.each do |stylesheet|
+          copy_stylesheet stylesheet.path, stylesheet.name
+        end
+      end
+
+      def copy_stylesheet path, name
+        copy_file stylesheet_path(:src, path), stylesheet_path(:target, path)
+      end
+
+      def stylesheet_path type, path
+        File.join send("#{type}_stylesheet_dir"), path, "_#{name}.#{stylesheet_ext}"
+      end
+
+      def stylesheet_ext
+        'css.sass'
+      end
+
+      def src_stylesheet_dir
+        'stylesheets/site/'
+      end
+
+      def target_stylesheet_dir
+        File.join "app/assets/", stylesheet_src_dir
       end
     end
   end

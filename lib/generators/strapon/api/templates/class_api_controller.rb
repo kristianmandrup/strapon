@@ -3,13 +3,10 @@ class Api::<%= class_name.camelize %>Controller < ApplicationController
   respond_to :json, :html
   before_filter :find_<%= class_name.underscore %>, :only => [:update, :show]
 
-  def create
-    <%= class_name.underscore %>_params = params[:<%= class_name.underscore %>]
+  def create    
   end
 
-  def update
-    <%= class_name.underscore %>_params = params[:<%= class_name.underscore %>]
-
+  def update    
     @<%= class_name.underscore %>.update_attributes(<%= class_name.underscore %>_params)
   end
 
@@ -17,6 +14,10 @@ class Api::<%= class_name.camelize %>Controller < ApplicationController
   end
 
   protected
+
+  def <%= class_name.underscore %>_params
+    params[:<%= class_name.underscore %>]
+  end
 
   def find_<%= class_name.underscore %>
   end
