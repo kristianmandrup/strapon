@@ -1,11 +1,11 @@
-require 'generators/strapon/html/stylesheet'
+require 'strapon/stylesheets/stylesheet'
 
 class FileRepository
   # TODO: Should load css files from stylesheets.yml
   attr_reader :stylesheets
 
   def initialize path = nil
-    @path = path if path
+    @path = path unless path.blank?
   end
 
   def load_stylesheets

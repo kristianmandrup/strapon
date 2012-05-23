@@ -1,7 +1,12 @@
+require 'strapon/stylesheets/builder'
+
 module Strapon
   module Generators
     class RiccoGenerator < Rails::Generators::Base
       source_root File.expand_path("../templates", __FILE__)
+
+      class_option :path, :type => :string, :desc => %q{Path to stylesheet_index.yml to be used to copy stylesheets.
+Allows finer control of which styles to copy into project}
 
       def run_generation
         puts "Setting up Ricco to do the damage"
@@ -16,69 +21,10 @@ module Strapon
 
         #css design structure
         remove_file "app/assets/stylesheets/application.css"
+
         copy_file "stylesheets/application.css.sass"                    , "app/assets/stylesheets/application.css.sass"
 
-        copy_file "stylesheets/site/00_variables/_all.sass"             , "app/assets/stylesheets/site/00_variables/_all.sass"
-        copy_file "stylesheets/site/00_variables/_base.sass"            , "app/assets/stylesheets/site/00_variables/_base.sass"
-        copy_file "stylesheets/site/00_variables/_colors.sass"          , "app/assets/stylesheets/site/00_variables/_colors.sass"
-        copy_file "stylesheets/site/00_variables/_fonts.sass"           , "app/assets/stylesheets/site/00_variables/_fonts.sass"
-        copy_file "stylesheets/site/00_variables/_grid.sass"            , "app/assets/stylesheets/site/00_variables/_grid.sass"
-
-        copy_file "stylesheets/site/01_reset/_reset.sass"               , "app/assets/stylesheets/site/01_reset/_reset.sass"
-
-        copy_file "stylesheets/site/02_grid/_grid_system.sass"          , "app/assets/stylesheets/site/02_grid/_grid_system.sass"
-        copy_file "stylesheets/site/02_grid/_grids_blueprint.sass"      , "app/assets/stylesheets/site/02_grid/_grids_blueprint.sass"
-
-        copy_file "stylesheets/site/03_typography/_typography.sass"     , "app/assets/stylesheets/site/03_typography/_typography.sass"
-
-        copy_file "stylesheets/site/04_elements/_all.sass"                          , "app/assets/stylesheets/site/04_elements/_all.sass"
-        copy_file "stylesheets/site/04_elements/_common.sass"                       , "app/assets/stylesheets/site/04_elements/_common.sass"
-        copy_file "stylesheets/site/04_elements/_edits.sass"                        , "app/assets/stylesheets/site/04_elements/_edits.sass"
-        copy_file "stylesheets/site/04_elements/_headers.sass"                      , "app/assets/stylesheets/site/04_elements/_headers.sass"
-        copy_file "stylesheets/site/04_elements/_images.sass"                       , "app/assets/stylesheets/site/04_elements/_images.sass"
-        copy_file "stylesheets/site/04_elements/_lists.sass"                        , "app/assets/stylesheets/site/04_elements/_lists.sass"
-        copy_file "stylesheets/site/04_elements/_semantics.sass"                    , "app/assets/stylesheets/site/04_elements/_semantics.sass"
-        copy_file "stylesheets/site/04_elements/_tables.sass"                       , "app/assets/stylesheets/site/04_elements/_tables.sass"
-
-        copy_file "stylesheets/site/05_forms/_all.sass"                             , "app/assets/stylesheets/site/05_forms/_all.sass"
-        copy_file "stylesheets/site/05_forms/_dropdowns.sass"                       , "app/assets/stylesheets/site/05_forms/_dropdowns.sass"
-        copy_file "stylesheets/site/05_forms/_fancy_dropdown.css.scss"              , "app/assets/stylesheets/site/05_forms/_fancy_dropdown.css.scss"
-        copy_file "stylesheets/site/05_forms/_form_defaults.css.sass"               , "app/assets/stylesheets/site/05_forms/_form_defaults.css.sass"
-        copy_file "stylesheets/site/05_forms/_formalize.css.sass"                   , "app/assets/stylesheets/site/05_forms/_formalize.css.sass"
-        copy_file "stylesheets/site/05_forms/_form_layouts.sass"                    , "app/assets/stylesheets/site/05_forms/_form_layouts.sass"
-
-        copy_file "stylesheets/site/06_patterns/_all.sass"                          , "app/assets/stylesheets/site/06_patterns/_all.sass"
-        copy_file "stylesheets/site/06_patterns/_button_groups.sass"                , "app/assets/stylesheets/site/06_patterns/_button_groups.sass"
-        copy_file "stylesheets/site/06_patterns/_buttons.sass"                      , "app/assets/stylesheets/site/06_patterns/_buttons.sass"
-        copy_file "stylesheets/site/06_patterns/_close.sass"                        , "app/assets/stylesheets/site/06_patterns/_close.sass"
-        copy_file "stylesheets/site/06_patterns/_component_animations.sass"         , "app/assets/stylesheets/site/06_patterns/_component_animations.sass"
-        copy_file "stylesheets/site/06_patterns/_popovers.sass"                     , "app/assets/stylesheets/site/06_patterns/_popovers.sass"
-        copy_file "stylesheets/site/06_patterns/_rails_messages.sass"               , "app/assets/stylesheets/site/06_patterns/_rails_messages.sass"
-        copy_file "stylesheets/site/06_patterns/_wells.sass"                        , "app/assets/stylesheets/site/06_patterns/_wells.sass"
-
-        copy_file "stylesheets/site/07_navigation/_navigation.sass"                 , "app/assets/stylesheets/site/07_navigation/_navigation.sass"
-
-        copy_file "stylesheets/site/08_sprites/_sprites.css.sass"                   , "app/assets/stylesheets/site/08_sprites/_sprites.css.sass"
-
-        copy_file "stylesheets/site/09_plugins/_plugins.css.sass"                   , "app/assets/stylesheets/site/09_plugins/_plugins.css.sass"
-
-        copy_file "stylesheets/site/10_layout_design/_all.sass"                     , "app/assets/stylesheets/site/10_layout_design/_all.sass"
-        copy_file "stylesheets/site/10_layout_design/_layout.sass"                  , "app/assets/stylesheets/site/10_layout_design/_layout.sass"
-        copy_file "stylesheets/site/10_layout_design/_design.sass"                  , "app/assets/stylesheets/site/10_layout_design/_design.sass"
-
-        copy_file "stylesheets/site/11_styletile/_tile_design.sass"                 , "app/assets/stylesheets/site/11_styletile/_tile_design.sass"
-        copy_file "stylesheets/site/11_styletile/_tile_layout.sass"                 , "app/assets/stylesheets/site/11_styletile/_tile_layout.sass"
-        copy_file "stylesheets/site/11_styletile/_tile_responsive.sass"             , "app/assets/stylesheets/site/11_styletile/_tile_responsive.sass"
-
-        copy_file "stylesheets/site/12_responsive/_bootstrap.css.scss"              , "app/assets/stylesheets/site/12_responsive/_bootstrap.css.scss"
-        copy_file "stylesheets/site/12_responsive/_mixins.sass"                     , "app/assets/stylesheets/site/12_responsive/_mixins.sass"
-        copy_file "stylesheets/site/12_responsive/_blueprint.sass"                  , "app/assets/stylesheets/site/12_responsive/_blueprint.sass"
-
-        copy_file "stylesheets/site/13_browser_adjustments/_ie.css.sass"            , "app/assets/stylesheets/site/13_browser_adjustments/_ie.css.sass"
-        copy_file "stylesheets/site/13_browser_adjustments/_modernizr.css.sass"     , "app/assets/stylesheets/site/13_browser_adjustments/_modernizr.css.sass"
-        copy_file "stylesheets/site/13_browser_adjustments/_selectivizr.sass"        , "app/assets/stylesheets/site/13_browser_adjustments/_selectivizr.sass"
-
-        copy_file "stylesheets/site/14_print/_print.css.sass"                       , "app/assets/stylesheets/site/14_print/_print.css.sass"
+        copy_stylesheets options[:path]
 
         # Gemfile
         inject_into_file "Gemfile", :after => /^.*gem 'jquery-rails.*\n/ do

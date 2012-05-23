@@ -1,9 +1,12 @@
-require 'generators/strapon/html/file_repository'
+require 'strapon/stylesheets/builder'
 
 module Strapon
   module Generators
     class RiccoGenerator < Rails::Generators::NamedBase
       source_root File.expand_path("../templates", __FILE__)
+
+      class_option :path, :type => :string, :desc => %q{Path to stylesheet_index.yml to be used to copy stylesheets.
+Allows finer control of which styles to copy into project}
 
       def run_generation
         puts "Setting up html controller for class #{class_name.camelize} "
@@ -20,9 +23,9 @@ module Strapon
 
         #css design structure
         remove_file "app/assets/stylesheets/application.css"
-        copy_file "stylesheets/application.css.sass"                        , "app/assets/stylesheets/application.css.sass"
+        copy_file "stylesheets/application.css.sass", "app/assets/stylesheets/application.css.sass"
 
-        copy_stylesheets
+        copy_stylesheets options[:path]
 
         # Gemfile
         inject_into_file "Gemfile", :after => /^.*gem 'jquery-rails.*\n/ do
@@ -55,31 +58,7 @@ module Strapon
 
       protected
 
-      def copy_stylesheets
-        FileRepository.new.build.stylesheets.each do |stylesheet|
-          copy_stylesheet stylesheet.path, stylesheet.name
-        end
-      end
-
-      def copy_stylesheet path, name
-        copy_file stylesheet_path(:src, path), stylesheet_path(:target, path)
-      end
-
-      def stylesheet_path type, path
-        File.join send("#{type}_stylesheet_dir"), path, "_#{name}.#{stylesheet_ext}"
-      end
-
-      def stylesheet_ext
-        'css.sass'
-      end
-
-      def src_stylesheet_dir
-        'stylesheets/site/'
-      end
-
-      def target_stylesheet_dir
-        File.join "app/assets/", stylesheet_src_dir
-      end
+      include Strapon::Stylesheets::Builder
     end
   end
 end
