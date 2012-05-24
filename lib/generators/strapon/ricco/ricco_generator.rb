@@ -56,6 +56,10 @@ Allows finer control of which styles to copy into project}
         puts ""
         puts "#{'*'*70}"
       end
+
+      protected
+
+      include Strapon::Stylesheets::Builder
     end
   end
 end
